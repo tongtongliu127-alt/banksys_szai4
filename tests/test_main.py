@@ -25,3 +25,10 @@ def test_import_data_loader():
 
     assert load_train_data is not None
     assert load_test_data is not None
+
+
+def test_import_visualizer():
+    from app.models.visualizer import plot_correlation_heatmap, plot_subscribe_pie
+
+    assert plot_subscribe_pie is not None
+    assert plot_correlation_heatmap is not None
