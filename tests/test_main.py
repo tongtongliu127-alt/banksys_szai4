@@ -1,8 +1,9 @@
 def test_import_app():
     import app
-    import app.models
     import app.ml
+    import app.models
     import app.utils
+
     assert app is not None
 
 
