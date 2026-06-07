@@ -31,5 +31,8 @@ jobs:
       - name: Test with pytest
         run: pytest --cov=app --cov-fail-under=80
 
+      - name: Train model
+        run: python -m app.ml.train --force
+
       - name: Docker build
         run: docker build -t banksys .
