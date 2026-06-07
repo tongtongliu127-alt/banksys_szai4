@@ -38,8 +38,8 @@ banksys_szai4/
 │   ├── main.py               # Streamlit 主入口
 │   ├── pages/                # 多页面结构
 │   │   ├── __init__.py
-│   │   ├── 01_data_analysis.py    # 数据分析页面
-│   │   └── 02_prediction.py        # 预测系统页面
+│   │   ├── data_analysis.py       # 数据分析页面
+│   │   └── prediction.py          # 预测系统页面
 │   ├── models/               # 业务逻辑层
 │   │   ├── __init__.py
 │   │   ├── data_loader.py         # 数据加载
