@@ -19,3 +19,8 @@ Thumbs.db
 
 # Environment
 .env
+
+# Coverage & test artifacts
+.coverage
+.pytest_cache/
+htmlcov/
