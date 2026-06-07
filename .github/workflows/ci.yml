@@ -1,0 +1,35 @@
+name: CI
+
+on:
+  push:
+    branches: ["feature/*", "fix/*", "chore/*"]
+  pull_request:
+    branches: [main]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Ruff format check
+        run: ruff format --check .
+
+      - name: Ruff lint check
+        run: ruff check .
+
+      - name: Test with pytest
+        run: pytest --cov=app --cov-fail-under=80
+
+      - name: Docker build
+        run: docker build -t banksys .
